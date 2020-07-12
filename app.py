@@ -21,14 +21,11 @@ import pytesseract
 
 from funct import coordinates,rescaleobj,rescaleocr
 #from ocr1 import do_ocr,captureimage
-
-
-root=tkinter.Tk()
-root.withdraw()
-a=root.winfo_screenwidth()
-b=root.winfo_screenheight()
-
-                
+import ctypes
+user32 = ctypes.windll.user32
+a,b = user32.GetSystemMetrics(0), user32.GetSystemMetrics(1)
+#print(a)
+#print(b)             
 app = Flask(__name__)
 
 
