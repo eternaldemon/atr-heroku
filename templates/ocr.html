@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>OCR</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="{{url_for('static',filename='styles.css') }}">
+</head>
+<body  class="body" style="background-image: url({{ url_for('static', filename='bg7.jpeg') }});
+ background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: 100% 100%;
+color:white;">
+
+<h1 style="text-align:center; width=25px;font-family:Bangers; font-weight: bold; font-size:36px">
+OCR
+</h1>
+
+<div class="outer" style="border-color:white;height:800px">
+<ul  style="font-size:18px;font-family:Bangers;">
+<p style="font-size:18px;"> Your Touch coordinates were:</p>
+{% for c in touch_coordinates %}
+ <li>  {{c[0]}}  and  {{c[1]}}</li>
+{% endfor %}
+</ul>
+
+<ul  style="font-size:18px;font-family:Bangers;">
+<p style="font-size:18px;"> Your OCR coordinates were:</p>
+{% for c in coordinates %}
+ <li>  {{c[0]}}  and  {{c[1]}}</li>
+{% endfor %}
+</ul>
+
+<p>You have been redirected to this page which implies touch was implemented without pysical means. </p>
+
+<form action = "/upload_ocr" method = "POST" 
+         enctype = "multipart/form-data" style="padding:5px;">
+         <input type = "file" name = "file" />
+         <input type = "submit"/>
+</form>
+
+<p style="padding:5px;font-size:20px;font-family:Bangers;"> OR </p>
+
+<form action="/selectocrimage" method="POST" style="margin-left:5px;">
+<p>
+<label style="font-size:18px;font-family:Bangers;"> Select Image </label>
+<select name="selectocrimage">
+   <option> image1.jpeg </option>
+   <option> image2.jpeg </option>
+</select>
+</p>
+<input class="btn" type="submit" value="Submit">
+</form>
+
+<p> Converted Text: 
+{% if text %}
+<p> 
+{% for t in text %}
+  {{ t }}
+{% endfor %}
+</p>
+{% endif %}
+</p>
+
+<form action = "/go_back" method = "POST" >
+<input class="btn" type="submit" value="Go Back">
+</form>
+</div>

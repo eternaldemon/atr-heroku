@@ -1,0 +1,59 @@
+
+
+.outer{
+margin:auto;
+width:1000px;
+height:500px;
+text-align:center;
+border:3px solid #000;
+border-color:white;
+font-family:Bangers;
+font-size:20px;
+}
+
+.title_app{
+width:500px;
+height:50px;
+text-align:center; 
+}
+
+.boxes {
+    display: inline-block;
+    position: relative;
+    margin: 1%;
+    float: left;
+    width: 22%;
+    height: 50px;
+    border:1px solid #000;
+    text-align:center; 
+font-family:Bangers;
+}
+
+#images{
+margin:48%;
+align:center;
+}
+
+.box1{
+display: inline-block;
+position:relative;
+text-align:center;
+margin: 1%;
+float: left;
+width: 47%;
+height:50px;
+font-family:Bangers;
+border:1px solid #000;
+border-color: white;
+}
+
+.box2{
+display: inline-block;
+text-align:center;
+margin: 1%;
+float: left;
+width: 40%;
+height:20px;
+font-family:Bangers;
+}
+
